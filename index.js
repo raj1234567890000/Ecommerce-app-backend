@@ -15,11 +15,7 @@ import cors from 'cors'
 dotenv.config({ path: "./.env" }); 
 
 
-const corsOptions = {
-  origin: "https://ecommerce-sz0y.onrender.com",
-  credentials: true,
-};
-app.use(cors(corsOptions));
+
 
 
 //database config
@@ -30,6 +26,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
+const corsOptions = {
+  origin: "https://ecommerce-sz0y.onrender.com",
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 //routes
 app.use('/api/v1/auth',authRoutes);
