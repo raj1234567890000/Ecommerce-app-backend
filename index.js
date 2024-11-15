@@ -14,6 +14,14 @@ import cors from 'cors'
 // Load environment variables from .env file
 dotenv.config({ path: "./.env" }); 
 
+
+const corsOptions = {
+  origin: "https://ecommerce-sz0y.onrender.com",
+  credentials: true,
+};
+app.use(cors(corsOptions));
+
+
 //database config
 connectDB();
 //rest objecct
